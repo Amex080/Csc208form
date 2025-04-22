@@ -1,3 +1,64 @@
+// Character counter function
+function countChars(textareaId, maxChars) {
+    const textarea = document.getElementById(textareaId);
+    const counter = document.getElementById(textareaId + 'Counter');
+    const charCount = textarea.value.length;
+    
+    counter.textContent = charCount;
+    
+    if (charCount > maxChars) {
+        counter.style.color = 'red';
+        // Truncate to max characters
+        textarea.value = textarea.value.substring(0, maxChars);
+        counter.textContent = maxChars;
+    } else {
+        counter.style.color = 'inherit';
+    }
+}
+
+// Form validation
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('staffForm');
+    
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            // Check character counts before submission
+            const personalStatementChars = document.getElementById('personalStatement').value.length;
+            const motivationChars = document.getElementById('motivation').value.length;
+            const bestExperienceChars = document.getElementById('bestExperience').value.length;
+            
+            if (personalStatementChars < 1) {
+                alert('Personal Statement must be at least 1 character');
+                e.preventDefault();
+                return;
+            }
+            
+            if (personalStatementChars > 100) {
+                alert('Personal Statement must be 100 characters or less');
+                e.preventDefault();
+                return;
+            }
+            
+            if (motivationChars > 100) {
+                alert('Motivation must be 100 characters or less');
+                e.preventDefault();
+                return;
+            }
+            
+            if (bestExperienceChars > 100) {
+                alert('Best Life Experience must be 100 characters or less');
+                e.preventDefault();
+                return;
+            }
+            
+            // Continue with the rest of your form submission logic
+        });
+    }
+});
+
+
+
+
 // JavaScript code to handle form interactions
 
 // Limit the number of checkboxes selected to 5
