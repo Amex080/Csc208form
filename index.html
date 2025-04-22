@@ -96,8 +96,8 @@
             <input type="text" id="name" name="name" required>
     
             <!-- 2) Personal Statement (your bio/about me) -->
-            <label for="personalStatement">Personal Statement</label>
-            <textarea id="personalStatement" name="personalStatement"></textarea>
+            <label for="personalStatement">Personal Statement (<span id="personalStatementCounter">0</span>/100 characters)</label>
+            <textarea id="personalStatement" name="personalStatement" oninput="countChars('personalStatement', 100)" maxlength="100" required></textarea>
     
             <!-- 3) Area of Specialization (your specialty here/required) -->
             <label for="specialization">Area of Specialization<span>*</span></label>
@@ -192,8 +192,8 @@
             </div>
     
             <!-- Motivation (in a text area) -->
-            <label for="motivation">Motivation</label>
-            <textarea id="motivation" name="motivation"></textarea>
+            <label for="motivation">Motivation (<span id="motivationCounter">0</span>/100 characters)</label>
+            <textarea id="motivation" name="motivation" oninput="countChars('motivation', 100)" maxlength="100"></textarea>
     
             <!-- Favorite Working Group -->
             <label for="favoriteGroup">What is your favorite working/association group and why?</label>
@@ -204,8 +204,8 @@
             <textarea id="favoriteDiscussion" name="favoriteDiscussion"></textarea>
     
             <!-- Best Life Experience -->
-            <label for="bestExperience">What is your best life experience you have come across and why?</label>
-            <textarea id="bestExperience" name="bestExperience"></textarea>
+            <label for="bestExperience">Best Life Experience (<span id="bestExperienceCounter">0</span>/100 characters)</label>
+            <textarea id="bestExperience" name="bestExperience" oninput="countChars('bestExperience', 100)" maxlength="100"></textarea>
     
             <!-- Official/Smiling Picture (attach your photo/image here/required) -->
             <label for="photo">Official/Smiling Picture<span>*</span></label>
